@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Chatroom</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="login-wrapper">
+    <div class="login-container">
+      <div class="logo-container">
+        <!-- Replace with your logo -->
+        <img src="https://via.placeholder.com/100x100?text=Logo" alt="Logo" />
+      </div>
+      <h1>Welcome Back</h1>
+      <p class="tagline">Sign in to your account and start your journey</p>
+      <form id="login-form">
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" required />
+          <span class="input-icon">@</span>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required />
+          <span class="input-icon">&#128274;</span>
+        </div>
+        <button type="button" class="btn primary-btn" onclick="login()">Login</button>
+        <button type="button" class="btn secondary-btn" onclick="signup()">Sign Up</button>
+      </form>
+      <div class="extra-options">
+        <button type="button" class="btn google-btn" onclick="loginWithGoogle()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo" />
+          Sign in with Google
+        </button>
+        <button type="button" class="link-btn" onclick="forgotPassword()">Forgot Password?</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Page -->
+  <div id="chat-container" class="container hidden">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <img class="profile-img" src="https://i.pravatar.cc/50" alt="Profile">
+        <h2>Private Chat</h2>
+      </div>
+      <div class="chat-header-right">
+        <button class="icon-btn" onclick="toggleDarkMode()">🌙</button>
+        <button class="icon-btn" onclick="logout()">⎋</button>
+      </div>
+    </div>  
+    <div id="messages" class="chat-box"></div>      
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+  
+  <!-- Load app.js only once, at the end of body -->
+  <script type="module" src="app.js"></script>    
+</body>
+</html>
